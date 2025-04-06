@@ -8,8 +8,8 @@
 
 /* Body Styling */
 body {
-    background-color: #ffffff; /* White background */
-    color: #000; /* Black text */
+    background-color: #f4f7f6; /* Light Gray Background (Soft, Neutral) */
+    color: #333; /* Dark Gray Text for Readability */
     font-size: 16px;
 }
 
@@ -19,18 +19,22 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: #000; /* Black */
+    background: linear-gradient(135deg, #4a90e2, #ff6f61); /* Soft Blue to Coral Gradient */
     color: white;
     transition: background-color 0.3s ease;
 }
 
 header:hover {
-    background-color: #1a1a1a;
+    background: linear-gradient(135deg, #3a7cc1, #ff5c4d); /* Slightly Darker Gradient */
 }
 
 header .logo h1 {
     font-size: 2rem;
     letter-spacing: 2px;
+    color: white; /* White Logo Text */
+    background: -webkit-linear-gradient(135deg, #4a90e2, #ff6f61); /* Gradient on Logo */
+    -webkit-background-clip: text; /* Gradient effect on text */
+    color: transparent; /* Make text color transparent to reveal gradient */
 }
 
 header nav ul {
@@ -50,7 +54,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #e30613; /* Red */
+    color: #ff6f61; /* Soft Coral Red on Hover */
 }
 
 /* Mobile Navigation */
@@ -72,27 +76,32 @@ header nav ul li a:hover {
     animation: fadeIn 2s forwards;
     position: relative;
     padding: 20px;
+    background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+    background-size: cover; /* Logo as part of background */
 }
 
 /* Hero Heading */
 .hero h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: black;
+    color: #ffffff; /* White Text */
     z-index: 2;
     position: relative;
     opacity: 0;
     animation: fadeInUp 1.5s ease-in-out forwards;
     animation-delay: 0.5s;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle Shadow for Readability */
 }
 
 /* Hero Logo */
 .hero-logo {
-    width: 350px;
+    width: 300px;
     height: auto;
     opacity: 0.7;
     z-index: 1;
+    border-radius: 50%; /* Circular Logo */
+    background: linear-gradient(135deg, #4a90e2, #ff6f61); /* Matching Gradient for Logo */
+    padding: 10px;
 }
 
 /* Japanese Values Section */
@@ -100,8 +109,8 @@ header nav ul li a:hover {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 10px; /* Space between logo and text */
-    color: black; /* Contrast with background */
+    margin-top: 10px;
+    color: #4a90e2; /* Soft Blue for Values */
 }
 
 .japanese-values p {
@@ -109,13 +118,13 @@ header nav ul li a:hover {
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #ff6f61; /* Soft Coral for Emphasis */
 }
-
 
 /* Strength, Honor, and Discipline Section */
 .values {
-    background-color: #020000;
-    color: white;
+    background-color: #f4f7f6; /* Light Gray Background */
+    color: #333; /* Dark Gray Text */
     text-align: center;
     padding: 50px 40px;
     font-size: 1.5rem;
@@ -130,17 +139,19 @@ header nav ul li a:hover {
     text-transform: uppercase;
     letter-spacing: 2px;
     animation: fadeInUp 1.5s ease-in-out forwards;
+    color: #4a90e2; /* Soft Blue for Emphasis */
 }
 
 .values p {
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto;
+    color: #555; /* Light Gray Text */
 }
 
 /* Footer Styling */
 footer {
-    background-color: #000;
+    background: linear-gradient(135deg, #4a90e2, #ff6f61); /* Gradient Footer */
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -148,6 +159,30 @@ footer {
 
 footer p {
     font-size: 1rem;
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-links a {
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%); /* Initial Grayscale */
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+    filter: grayscale(0%); /* Color on Hover */
 }
 
 /* Transitions */
@@ -166,28 +201,6 @@ footer p {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Social Media Links */
-.social-links {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.social-links a {
-    margin: 0 10px;
-    display: inline-block;
-}
-
-.social-links img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s;
-}
-
-.social-links img:hover {
-    transform: scale(1.1);
 }
 
 /* Media Queries for Mobile Responsiveness */
@@ -236,7 +249,7 @@ footer p {
 .links {
     text-align: center;
     padding: 50px 40px;
-    background-color: #f4f4f9;
+    background-color: #f4f7f6;
 }
 
 .links h2 {
@@ -255,27 +268,27 @@ footer p {
 
 .links ul li a {
     font-size: 1.2rem;
-    color: #1c3d5a;
+    color: #4a90e2; /* Soft Blue */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .links ul li a:hover {
-    color: #e30613; /* Judo Red */
+    color: #ff6f61; /* Soft Coral Red */
 }
 
 /* History Page */
 .history {
     padding: 50px 40px;
-    background-color: #f4f4f9;
+    background-color: #f4f7f6;
     text-align: center;
 }
 
 .history h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #1c3d5a; /* Judo Blue */
+    color: #4a90e2; /* Soft Blue */
 }
 
 .history p {
@@ -283,11 +296,11 @@ footer p {
     line-height: 1.6;
     max-width: 900px;
     margin: 0 auto 20px;
-    color: #555;
+    color: #555; /* Light Gray Text */
 }
 
 footer {
-    background-color: #1c3d5a;
+    background: linear-gradient(135deg, #4a90e2, #ff6f61); /* Gradient Footer */
     color: white;
     padding: 20px 0;
     text-align: center;
