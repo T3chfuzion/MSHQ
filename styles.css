@@ -1,4 +1,18 @@
-/* Reset and Global Styles */
+/* Root Colors - Inspired by Kodokan Judo */
+:root {
+    --deep-red: #B22222; /* Kodokan Red */
+    --navy-blue: #0B3D91; /* Kodokan Blue */
+    --gold: #D4AF37; /* Kodokan Gold */
+    --white: #FFFFFF;
+    --soft-gray: #F5F5F5;
+    --dark-gray: #2E2E2E;
+
+    /* Gradients for Smooth Transitions */
+    --gradient-primary: linear-gradient(135deg, var(--deep-red), var(--navy-blue));
+    --gradient-soft: linear-gradient(135deg, var(--soft-gray), var(--gold));
+}
+
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,28 +22,37 @@
 
 /* Body Styling */
 body {
-    background-color: #f7f9fb; /* Light, soft background */
-    color: #333;
+    background: var(--soft-gray);
+    color: var(--dark-gray);
     font-size: 16px;
+    line-height: 1.5; /* Increased line height for readability */
+    overflow-x: hidden;
+    padding-top: 80px; /* Added padding-top for space below fixed header */
 }
 
-/* Header Styling */
+/* Header - Sticky Navigation */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: #1c3d5a; /* Deep blue background */
-    color: white;
-    transition: background-color 0.3s ease;
+    padding: 20px 60px;
+    background: var(--navy-blue);
+    color: var(--white);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
 }
 
 header:hover {
-    background-color: #2d557d;
+    background: var(--deep-red);
 }
 
 header .logo h1 {
     font-size: 2rem;
+    font-weight: 600;
     letter-spacing: 2px;
 }
 
@@ -39,117 +62,76 @@ header nav ul {
 }
 
 header nav ul li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 header nav ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--white);
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding: 10px 15px;
 }
 
 header nav ul li a:hover {
-    color: #a4c6d1; /* Soft teal on hover */
-}
-
-/* Mobile Navigation */
-.menu-toggle {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-    color: white;
-}
-
-/* Mobile View - Menu Toggle */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        display: none;
-        width: 100%;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    header nav ul.active {
-        display: flex;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
-    header nav ul li a {
-        font-size: 1.2rem;
-    }
-
-    /* Show the menu toggle button */
-    .menu-toggle {
-        display: block;
-    }
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
 }
 
 /* Hero Section */
 .hero {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
     text-align: center;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    position: relative;
+    min-height: 100vh;
+    background: var(--gradient-primary);
+    color: var(--white);
     padding: 20px;
 }
 
+/* Hero Text */
 .hero h2 {
     font-size: 3rem;
-    margin-bottom: 20px;
-    color: white;
-    opacity: 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     animation: fadeInUp 1.5s ease-in-out forwards;
-    animation-delay: 0.5s;
 }
 
 .hero-logo {
-    width: 350px;
-    height: auto;
-    opacity: 0.8;
+    max-width: 250px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-/* Japanese Values Section */
+/* Japanese Values */
 .japanese-values {
-    text-align: center;
+    display: flex;
+    gap: 20px;
     font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 10px;
-    color: white;
+    color: var(--gold);
+    margin-top: 20px;
 }
 
 .japanese-values p {
     margin: 5px 0;
-    font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Strength, Honor, and Discipline Section */
+/* Values Section */
 .values {
-    background-color: #020000;
-    color: white;
+    background: var(--gradient-soft);
+    color: var(--dark-gray);
     text-align: center;
-    padding: 50px 40px;
+    padding: 60px 40px;
     font-size: 1.5rem;
     font-weight: bold;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
 }
 
 .values h2 {
@@ -157,7 +139,6 @@ header nav ul li a:hover {
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: fadeInUp 1.5s ease-in-out forwards;
 }
 
 .values p {
@@ -166,47 +147,64 @@ header nav ul li a:hover {
     margin: 0 auto;
 }
 
-/* Footer Styling */
+/* Footer */
 footer {
-    background-color: #1c3d5a;
-    color: white;
+    background-color: var(--navy-blue);
+    color: var(--white);
     padding: 20px 0;
     text-align: center;
-}
-
-footer p {
-    font-size: 1rem;
+    margin-top: 40px;
 }
 
 /* Social Media Links */
 .social-links {
     display: flex;
+    gap: 20px;
     justify-content: center;
     margin-top: 20px;
 }
 
 .social-links a {
-    margin: 0 10px;
     display: inline-block;
+    width: 60px; /* Set a fixed size for the icons */
+    height: 60px; /* Maintain square aspect ratio */
 }
 
 .social-links img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s;
+    width: 100%; /* Make image fill the container */
+    height: 100%;
+    object-fit: contain; /* Ensure the image fits within the bounds */
+    transition: transform 0.3s ease;
 }
 
 .social-links img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    margin-top: 80px; /* Adjust for the fixed header */
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--navy-blue);
+}
+
+.contact p {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 20px;
+}
+
+.contact a {
+    color: var(--deep-red);
+    text-decoration: none;
 }
 
 /* Transitions */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -218,92 +216,60 @@ footer p {
     }
 }
 
-/* Links Page */
-.links {
-    text-align: center;
-    padding: 50px 40px;
-    background-color: #f4f4f9;
-}
+/* Responsive Styles */
 
-.links h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.links ul li {
-    margin: 10px 0;
-}
-
-.links ul li a {
-    font-size: 1.2rem;
-    color: #1c3d5a;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.links ul li a:hover {
-    color: #a4c6d1;
-}
-
-/* History Page */
-.history {
-    padding: 50px 40px;
-    background-color: #f4f4f9;
-    text-align: center;
-}
-
-.history h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #1c3d5a; /* Judo Blue */
-}
-
-.history p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 900px;
-    margin: 0 auto 20px;
-    color: #555;
-}
-
-/* Media Queries for Mobile Responsiveness */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
+/* For devices larger than 768px (Tablets, iPads, etc.) */
+@media (max-width: 1024px) {
     header nav ul {
         flex-direction: column;
-        display: none;
-        width: 100%;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    header nav ul.active {
-        display: flex;
+        align-items: center;
     }
 
     header nav ul li {
         margin: 10px 0;
     }
 
-    header nav ul li a {
-        font-size: 1.2rem;
+    .hero h2 {
+        font-size: 2.5rem;
     }
 
-    /* Show the menu toggle button */
-    .menu-toggle {
-        display: block;
-        color: white;
-        cursor: pointer;
+    .hero-logo {
+        max-width: 200px;
+    }
+
+    .values h2 {
+        font-size: 2rem;
+    }
+
+    .values p {
+        font-size: 1.1rem;
+    }
+
+    .social-links a {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-links img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* For devices smaller than 768px (Mobile Devices, including iPhone SE) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 120px; /* More space for fixed header on mobile */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
     }
 
     .hero h2 {
@@ -311,6 +277,71 @@ footer p {
     }
 
     .hero-logo {
-        width: 250px;
+        max-width: 180px;
+    }
+
+    .values {
+        padding: 40px 20px;
+    }
+
+    .values h2 {
+        font-size: 1.8rem;
+    }
+
+    .values p {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .social-links a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-links img {
+        width: 100%;
+        height: 100%;
+    }
+
+    footer {
+        padding: 15px 0;
+    }
+}
+
+/* For very small devices (iPhone SE and below) */
+@media (max-width: 375px) {
+    body {
+        font-size: 14px; /* Slightly smaller font size for very small devices */
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-logo {
+        max-width: 150px;
+    }
+
+    .values h2 {
+        font-size: 1.5rem;
+    }
+
+    .values p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    .social-links a {
+        width: 35px;
+        height: 35px;
+    }
+
+    .social-links img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .contact p {
+        font-size: 1rem; /* Ensure text is readable on small screens */
     }
 }
