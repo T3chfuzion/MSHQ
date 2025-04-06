@@ -1,5 +1,7 @@
-/* Root Colors - Inspired by Kodokan Judo */
-:root {
+/* ============================
+   Root Colors - Inspired by Kodokan Judo
+   ============================ */
+   :root {
     --deep-red: #B22222; /* Kodokan Red */
     --navy-blue: #0B3D91; /* Kodokan Blue */
     --gold: #D4AF37; /* Kodokan Gold */
@@ -12,7 +14,9 @@
     --gradient-soft: linear-gradient(135deg, var(--soft-gray), var(--gold));
 }
 
-/* Reset */
+/* ============================
+   Global Reset & Default Styles
+   ============================ */
 * {
     margin: 0;
     padding: 0;
@@ -20,32 +24,24 @@
     font-family: 'Manrope', sans-serif;
 }
 
-/* Body Styling */
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh; /* Ensure body fills the viewport height */
-    display: flex;
-    flex-direction: column; /* Ensures the footer stays at the bottom */
+body {
     background: var(--soft-gray);
     color: var(--dark-gray);
     font-size: 16px;
     line-height: 1.5;
     overflow-x: hidden;
+    padding-top: 80px; /* Space below fixed header */
 }
 
-/* Ensure the content above the footer fills the remaining space */
-.main-content {
-    flex-grow: 1;
-}
-
-/* Header - Sticky Navigation */
+/* ============================
+   Header & Navigation
+   ============================ */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
-    background: var(--navy-blue); /* Kodokan Blue for the header */
+    background: var(--navy-blue);
     color: var(--white);
     position: fixed;
     width: 100%;
@@ -56,23 +52,38 @@ header {
 }
 
 header:hover {
-    background: var(--deep-red); /* Kodokan Red when hovered */
+    background: var(--deep-red);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 header .logo h1 {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
 }
 
-/* Hamburger Menu */
+header .logo img {
+    height: 60px;
+    width: 60px; /* Keeping it square to ensure a perfect circle */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image is properly scaled within the circle */
+    border: 3px solid var(--gold); /* Optional: Adds a border for a premium look */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adds subtle shadow for depth */
+}
+
 .menu-toggle {
-    display: none; /* Hidden by default */
-    font-size: 30px;
+    display: none;
+    font-size: 2rem;
     cursor: pointer;
 }
 
-/* Mobile Menu Styles */
 header nav ul {
     display: flex;
     list-style: none;
@@ -87,73 +98,30 @@ header nav ul li a {
     color: var(--white);
     font-weight: 500;
     font-size: 1rem;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
     padding: 10px 15px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: var(--gold); /* Kodokan Gold hover effect */
-    border-bottom: 2px solid var(--gold); /* Kodokan Gold border on hover */
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
 }
 
-.japanese-values {
-    display: flex;
-    justify-content: center; /* Align the text in the center */
-    margin-top: 20px;
-}
-
-.japanese-text {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 3rem; /* Increased font size for better prominence */
-    font-weight: bold;
-    color: var(--gold); /* Kodokan Gold */
-    margin: 0 20px; /* Added margin for separation between words */
-    text-transform: uppercase;
-    letter-spacing: 2px; /* Added more spacing between characters */
-}
-
-
-/* Show the menu toggle on smaller screens */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Show hamburger icon */
-    }
-
-    header nav ul {
-        display: none; /* Hide the menu by default on mobile */
-        flex-direction: column; /* Stack the links vertically */
-        width: 100%; /* Full width for mobile menu */
-        text-align: center;
-    }
-
-    header nav ul.active {
-        display: flex; /* Show the menu when active */
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
-    header nav ul li a {
-        font-size: 1.5rem;
-    }
-}
-
-/* Hero Section */
+/* ============================
+   Hero Section
+   ============================ */
 .hero {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    background: var(--gradient-primary); /* Kodokan gradient background */
+    background: var(--gradient-primary);
     color: var(--white);
     padding: 20px;
 }
 
-/* Hero Text */
 .hero h2 {
     font-size: 3rem;
     font-weight: bold;
@@ -162,15 +130,33 @@ header nav ul li a:hover {
 }
 
 .hero-logo {
-    max-width: 250px;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    width: 100%; /* Makes the image take up the full width of its container */
+    height: auto; /* Maintains the aspect ratio */
+    max-width: 300px; /* Optional: restricts the maximum size */
+    object-fit: cover; /* Ensures the image covers the container area without distortion */
+    border-radius: 50%; /* Makes the image a circle */
+    margin-top: 20px;
 }
 
-/* Values Section */
+.japanese-values {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.japanese-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+/* ============================
+   Values Section
+   ============================ */
 .values {
-    background: var(--gradient-soft); /* Kodokan Soft Gradient */
+    background: var(--gradient-soft);
     color: var(--dark-gray);
     text-align: center;
     padding: 60px 40px;
@@ -191,64 +177,20 @@ header nav ul li a:hover {
     margin: 0 auto;
 }
 
-/* Footer */
+/* ============================
+   Footer
+   ============================ */
 footer {
-    background-color: var(--navy-blue); /* Kodokan Blue footer */
+    background-color: var(--navy-blue);
     color: var(--white);
     padding: 20px 0;
     text-align: center;
     margin-top: 40px;
 }
 
-/* Social Media Links */
-.social-links {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.social-links a {
-    display: inline-block;
-    width: 60px; /* Set a fixed size for the icons */
-    height: 60px; /* Maintain square aspect ratio */
-}
-
-.social-links img {
-    width: 100%; /* Make image fill the container */
-    height: 100%;
-    object-fit: contain; /* Ensure the image fits within the bounds */
-    transition: transform 0.3s ease;
-}
-
-.social-links img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
-}
-
-/* Contact Section */
-.contact {
-    text-align: center;
-    margin-top: 80px; /* Adjust for the fixed header */
-}
-
-.contact h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--navy-blue); /* Kodokan Blue */
-}
-
-.contact p {
-    font-size: 1.2rem;
-    color: var(--dark-gray);
-    margin-bottom: 20px;
-}
-
-.contact a {
-    color: var(--deep-red); /* Kodokan Red for links */
-    text-decoration: none;
-}
-
-/* Transitions */
+/* ============================
+   Animations & Transitions
+   ============================ */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -260,155 +202,91 @@ footer {
     }
 }
 
-/* Responsive Styles */
-
-/* For devices larger than 768px (Tablets, iPads, etc.) */
+/* ============================
+   Responsive Styles
+   ============================ */
 @media (max-width: 1024px) {
     header nav ul {
         flex-direction: column;
         align-items: center;
     }
 
-    header nav ul li {
-        margin: 10px 0;
-    }
-
     .hero h2 {
         font-size: 2.5rem;
     }
 
-    .hero-logo {
-        max-width: 200px;
-    }
-
     .values h2 {
         font-size: 2rem;
     }
-
-    .values p {
-        font-size: 1.1rem;
-    }
-
-    .social-links a {
-        width: 50px;
-        height: 50px;
-    }
-
-    .social-links img {
-        width: 100%;
-        height: 100%;
-    }
 }
 
-/* For devices smaller than 768px (Mobile Devices, including iPhone SE) */
 @media (max-width: 768px) {
     body {
-        padding-top: 120px; /* More space for fixed header on mobile */
+        padding-top: 120px;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     header nav ul {
+        display: none;
         flex-direction: column;
-        align-items: center;
         width: 100%;
+        text-align: center;
+        background: var(--navy-blue);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 10px 0;
     }
 
-    header nav ul li {
-        margin: 10px 0;
+    header nav ul.active {
+        display: flex;
     }
 
     .hero h2 {
         font-size: 2rem;
     }
 
-    .hero-logo {
-        max-width: 180px;
-    }
-
-    .values {
-        padding: 40px 20px;
-    }
-
-    .values h2 {
-        font-size: 1.8rem;
-    }
-
-    .values p {
-        font-size: 1rem;
-        padding: 0 20px;
-    }
-
-    .social-links a {
-        width: 40px;
-        height: 40px;
-    }
-
-    .social-links img {
-        width: 100%;
-        height: 100%;
-    }
-
-    footer {
-        padding: 15px 0;
+    .japanese-text {
+        font-size: 2rem;
     }
 }
 
-/* For very small devices (iPhone SE and below) */
 @media (max-width: 375px) {
     body {
-        font-size: 14px; /* Slightly smaller font size for very small devices */
+        font-size: 14px;
     }
 
     .hero h2 {
         font-size: 1.5rem;
     }
 
-    .hero-logo {
-        max-width: 150px;
-    }
-
-    .values h2 {
-        font-size: 1.5rem;
-    }
-
-    .values p {
-        font-size: 0.9rem;
-        padding: 0 10px;
-    }
-
-    .social-links a {
-        width: 35px;
-        height: 35px;
-    }
-
-    .social-links img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .contact p {
-        font-size: 1rem; /* Ensure text is readable on small screens */
+    .japanese-text {
+        font-size: 1.8rem;
     }
 }
 
-/* Schedule Section */
-.schedule {
-    text-align: center;
-    padding: 60px 20px;
-    margin-bottom: 0; /* Remove any extra space below the schedule */
+/* Social Media Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.schedule h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.social-links a {
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
-.schedule p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
+.social-links img {
+    width: 40px; /* Adjusted size for better balance */
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
-.schedule p span {
-    font-weight: bold;
+/* Hover effect for social media icons */
+.social-links a:hover img {
+    transform: scale(1.1); /* Slight zoom effect on hover */
 }
