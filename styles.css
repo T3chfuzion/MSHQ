@@ -21,13 +21,22 @@
 }
 
 /* Body Styling */
-body {
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensure body fills the viewport height */
+    display: flex;
+    flex-direction: column; /* Ensures the footer stays at the bottom */
     background: var(--soft-gray);
     color: var(--dark-gray);
     font-size: 16px;
-    line-height: 1.5; /* Increased line height for readability */
+    line-height: 1.5;
     overflow-x: hidden;
-    padding-top: 80px; /* Added padding-top for space below fixed header */
+}
+
+/* Ensure the content above the footer fills the remaining space */
+.main-content {
+    flex-grow: 1;
 }
 
 /* Header - Sticky Navigation */
@@ -87,6 +96,23 @@ header nav ul li a:hover {
     border-bottom: 2px solid var(--gold); /* Kodokan Gold border on hover */
 }
 
+.japanese-values {
+    display: flex;
+    justify-content: center; /* Align the text in the center */
+    margin-top: 20px;
+}
+
+.japanese-text {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 3rem; /* Increased font size for better prominence */
+    font-weight: bold;
+    color: var(--gold); /* Kodokan Gold */
+    margin: 0 20px; /* Added margin for separation between words */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Added more spacing between characters */
+}
+
+
 /* Show the menu toggle on smaller screens */
 @media (max-width: 768px) {
     .menu-toggle {
@@ -140,22 +166,6 @@ header nav ul li a:hover {
     margin: 20px 0;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
-
-/* Japanese Values */
-.japanese-values {
-    display: flex;
-    gap: 20px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--gold); /* Kodokan Gold */
-    margin-top: 20px;
-}
-
-.japanese-values p {
-    margin: 5px 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 /* Values Section */
@@ -370,7 +380,35 @@ footer {
         height: 35px;
     }
 
-    footer {
-        padding: 10px 0;
+    .social-links img {
+        width: 100%;
+        height: 100%;
     }
+
+    .contact p {
+        font-size: 1rem; /* Ensure text is readable on small screens */
+    }
+}
+
+/* Schedule Section */
+.schedule {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 0; /* Remove any extra space below the schedule */
+}
+
+.schedule h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.schedule p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.schedule p span {
+    font-weight: bold;
 }
