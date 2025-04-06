@@ -29,7 +29,7 @@ header:hover {
 }
 
 header .logo h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     letter-spacing: 2px;
 }
 
@@ -53,6 +53,13 @@ header nav ul li a:hover {
     color: #e30613; /* Red */
 }
 
+/* Mobile Navigation */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 /* Hero Section */
 .hero {
     display: flex;
@@ -60,28 +67,35 @@ header nav ul li a:hover {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    background: url('images/mshqlogo.jpg') center/contain no-repeat, #fff;
-    background-size: 50%;
     text-align: center;
     opacity: 0;
     animation: fadeIn 2s forwards;
+    position: relative;
+    padding: 20px;
 }
 
+/* Hero Heading */
 .hero h2 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     color: black;
+    z-index: 2;
+    position: relative;
     opacity: 0;
     animation: fadeInUp 1.5s ease-in-out forwards;
     animation-delay: 0.5s;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.hero p {
-    font-size: 1.5rem;
-    color: black;
-    opacity: 0;
-    animation: fadeInUp 1.5s ease-in-out forwards;
-    animation-delay: 1s;
+/* Hero Image */
+.hero-image {
+    background: url('images/mshqlogo.jpg') center/contain no-repeat;
+    width: 60%;
+    height: 50vh;
+    opacity: 0.7; /* Slight transparency */
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-30%);
 }
 
 /* About Section */
@@ -92,7 +106,7 @@ header nav ul li a:hover {
 }
 
 .about h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     transition: transform 1s ease-out;
     opacity: 0;
@@ -154,4 +168,47 @@ footer p {
 
 .social-links img:hover {
     transform: scale(1.1);
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: white;
+        cursor: pointer;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero-image {
+        width: 80%;
+        height: 40vh;
+    }
+
+    .about {
+        padding: 30px 20px;
+    }
 }
