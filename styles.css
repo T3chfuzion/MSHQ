@@ -1,4 +1,4 @@
-/* General Reset */
+/* Reset and Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,8 +8,8 @@
 
 /* Body Styling */
 body {
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #ffffff; /* White background */
+    color: #000; /* Black text */
     font-size: 16px;
 }
 
@@ -19,13 +19,13 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: #1c3d5a;
+    background-color: #000; /* Black */
     color: white;
     transition: background-color 0.3s ease;
 }
 
 header:hover {
-    background-color: #2d557d;
+    background-color: #1a1a1a;
 }
 
 header .logo h1 {
@@ -50,7 +50,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #a4c6d1;
+    color: #e30613; /* Red */
 }
 
 /* Hero Section */
@@ -60,8 +60,8 @@ header nav ul li a:hover {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
-    color: white;
+    background: url('images/mshqlogo.jpg') center/contain no-repeat, #fff;
+    background-size: 50%;
     text-align: center;
     opacity: 0;
     animation: fadeIn 2s forwards;
@@ -70,6 +70,7 @@ header nav ul li a:hover {
 .hero h2 {
     font-size: 3rem;
     margin-bottom: 10px;
+    color: black;
     opacity: 0;
     animation: fadeInUp 1.5s ease-in-out forwards;
     animation-delay: 0.5s;
@@ -77,6 +78,7 @@ header nav ul li a:hover {
 
 .hero p {
     font-size: 1.5rem;
+    color: black;
     opacity: 0;
     animation: fadeInUp 1.5s ease-in-out forwards;
     animation-delay: 1s;
@@ -86,7 +88,7 @@ header nav ul li a:hover {
 .about {
     padding: 50px 40px;
     text-align: center;
-    background-color: #e0f1f6;
+    background-color: #f4f4f9;
 }
 
 .about h2 {
@@ -104,7 +106,7 @@ header nav ul li a:hover {
 
 /* Footer Styling */
 footer {
-    background-color: #1c3d5a;
+    background-color: #000;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -132,6 +134,7 @@ footer p {
     }
 }
 
+/* Social Media Links */
 .social-links {
     display: flex;
     justify-content: center;
@@ -152,5 +155,3 @@ footer p {
 .social-links img:hover {
     transform: scale(1.1);
 }
-
-
