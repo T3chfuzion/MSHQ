@@ -95,6 +95,32 @@ header nav ul li a:hover {
     z-index: 1;
 }
 
+/* Strength, Honor, and Discipline Section */
+.values {
+    background-color: #e30613; /* Judo Red */
+    color: white;
+    text-align: center;
+    padding: 50px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.values h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+.values p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 /* About Section */
 .about {
     padding: 50px 40px;
