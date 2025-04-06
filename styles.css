@@ -265,3 +265,30 @@ footer p {
     color: #e30613; /* Judo Red */
 }
 
+/* History Page */
+.history {
+    padding: 50px 40px;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+.history h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #1c3d5a; /* Judo Blue */
+}
+
+.history p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    color: #555;
+}
+
+footer {
+    background-color: #1c3d5a;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
