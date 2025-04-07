@@ -382,3 +382,49 @@ footer {
                 grid-template-columns: 1fr;
             }
         }
+
+/* ============================
+   Gallery Section Styles
+   ============================ */
+   .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    border: 1px solid transparent;  /* or a light color like #f0f0f0 */
+    padding: 10px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 8px;
+}
+
+
+
+.gallery-item img {
+    width: 100%;           /* Ensure image fills the container */
+    height: 200px;         /* Fixed height for uniform image size */
+    object-fit: cover;     /* Ensure images cover the container without distortion */
+    border-radius: 10px;   /* Rounded corners for the images */
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+}
