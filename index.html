@@ -3,49 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MSHQ Judo - Training in strength, honor, and discipline">
+    <meta name="keywords" content="judo, martial arts, training, discipline, strength, honor">
     <title>MSHQ Judo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="logo">
+            <img src="images/mshqlogo.jpg" alt="MSHQ Judo Logo">
             <h1>MSHQ Judo</h1>
-            <div class="menu-toggle">&#9776;</div>
         </div>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
         <nav>
-            <ul>
+            <ul id="nav-menu">
                 <li><a href="about.html">About</a></li>
                 <li><a href="training.html">Training</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="upcoming-events.html">Upcoming Events</a></li>
-                <li><a href="links.html">Links</a></li>
-                <li><a href="history.html">History</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="upcoming-events.html">Events</a></li>
+                <li><a href="history.html">History</a></li>
                 <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="main-content">
-        <section class="hero">
-            <h2>Welcome to MSHQ Judo</h2>
-            <img src="images/mshqlogo.jpg" alt="MSHQ Judo Logo" class="hero-logo">
-            <div class="japanese-values">
-                <p><span class="japanese-text">強さ</span><span class="japanese-text">名誉</span><span class="japanese-text">規律</span></p>
+    <section class="hero">
+        <h2>Welcome to MSHQ Judo</h2>
+        <img src="images/mshqlogo.jpg" alt="MSHQ Judo Training">
+        <div class="japanese-values">
+            <div class="value-item">
+                <span class="japanese-text">強さ</span>
+                
             </div>
-        </section>
-        <section class="values">
-            <h2>Strength, Honor, and Discipline</h2>
-            <p>At MSHQ Judo, we embody the values of strength, honor, and discipline in every training session. Focusing on developing the physical and mental 
-               strength of each individual, creating a disciplined and supportive community.</p>
-        </section>
-    </div>
+            <div class="value-item">
+                <span class="japanese-text">名誉</span>
+                
+            </div>
+            <div class="value-item">
+                <span class="japanese-text">規律</span>
+                
+            </div>
+        </div>
+    </section>
+    
+    <section class="values">
+        <h2>Strength, Honor, and Discipline</h2>
+        <p>At MSHQ Judo, we embody the values of strength, honor, and discipline in every training session. We focus on developing the physical and mental strength of each individual, creating a disciplined and supportive community where practitioners can grow and excel in the art of Judo.</p>
+    </section>
 
     <footer>
-        <p>&copy; 2025 MSHQ Judo. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: info@mshqjudo.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 123 Dojo Street, City, State ZIP</p>
+            </div>
+            <div class="social-links">
+                <h3>Follow Us</h3>
+                <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2025 MSHQ Judo. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Basic mobile menu toggle functionality
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
